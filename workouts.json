@@ -1,0 +1,112 @@
+{
+  "sessions": [
+    {
+      "id": "curl_1789068876242_czkjq",
+      "targetReps": 10,
+      "completedReps": 10,
+      "targetReached": true,
+      "durationSeconds": 35,
+      "caloriesBurned": 4.5,
+      "averageFormScore": 96,
+      "armUsed": "Right",
+      "repsDetail": [
+        {
+          "repNumber": 1,
+          "angle": 42,
+          "formScore": 98,
+          "timestamp": "2026-09-10T19:34:36.249Z"
+        }
+      ],
+      "createdAt": "2026-09-10T19:34:36.259Z"
+    },
+    {
+      "id": "curl_1789069082920_7oljq",
+      "targetReps": 5,
+      "completedReps": 5,
+      "targetReached": true,
+      "durationSeconds": 113,
+      "caloriesBurned": 2.3,
+      "averageFormScore": 95,
+      "armUsed": "Auto",
+      "repsDetail": [
+        {
+          "repNumber": 1,
+          "angle": 159,
+          "formScore": 95,
+          "time": 1789069178192
+        },
+        {
+          "repNumber": 1,
+          "angle": 159,
+          "formScore": 95,
+          "timestamp": "2026-09-10T19:39:38.205Z"
+        },
+        {
+          "repNumber": 2,
+          "angle": 148,
+          "formScore": 95,
+          "time": 1789069194092
+        },
+        {
+          "repNumber": 2,
+          "angle": 148,
+          "formScore": 95,
+          "timestamp": "2026-09-10T19:39:54.107Z"
+        },
+        {
+          "repNumber": 3,
+          "angle": 150,
+          "formScore": 95,
+          "time": 1789069197426
+        },
+        {
+          "repNumber": 3,
+          "angle": 150,
+          "formScore": 95,
+          "timestamp": "2026-09-10T19:39:57.435Z"
+        },
+        {
+          "repNumber": 4,
+          "angle": 158,
+          "formScore": 95,
+          "time": 1789069200816
+        },
+        {
+          "repNumber": 4,
+          "angle": 158,
+          "formScore": 95,
+          "timestamp": "2026-09-10T19:40:00.825Z"
+        },
+        {
+          "repNumber": 5,
+          "angle": 153,
+          "formScore": 95,
+          "time": 1789069204027
+        },
+        {
+          "repNumber": 5,
+          "angle": 153,
+          "formScore": 95,
+          "timestamp": "2026-09-10T19:40:04.036Z"
+        }
+      ],
+      "createdAt": "2026-09-10T19:40:04.074Z"
+    },
+    {
+      "id": "curl_1789069082920_7oljq",
+      "targetReps": 5,
+      "completedReps": 5,
+      "targetReached": true,
+      "durationSeconds": 113,
+      "caloriesBurned": 2.3,
+      "averageFormScore": 95,
+      "armUsed": "Auto",
+      "repsDetail": [],
+      "createdAt": "2026-09-10T19:40:04.081Z"
+    }
+  ],
+  "totalReps": 20,
+  "totalWorkouts": 3,
+  "bestSet": 10,
+  "totalCalories": 9.1
+}

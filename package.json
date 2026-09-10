@@ -1,0 +1,18 @@
+{
+  "name": "ai-dumbbell-curl-counter",
+  "version": "1.0.0",
+  "description": "AI-powered dumbbell bicep curl counter with webcam profile pose detection and real-time backend sync",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": ["mediapipe", "bicep-curl", "gym", "fitness", "computer-vision", "pose-estimation"],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}
