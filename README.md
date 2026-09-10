@@ -1,136 +1,182 @@
-# 🏋️ CYBERCURL AI — Precision Bicep Curl Vision System
+<div align="center">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://app.netlify.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](#license)
-[![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)](https://nodejs.org)
-[![MediaPipe](https://img.shields.io/badge/MediaPipe-Pose-00f2fe.svg)](https://mediapipe.dev)
+# 💪 CYBERCURL AI
+### Real-Time Vision Dumbbell Bicep Curl Tracker & Form Analyzer
 
-> A futuristic, cyberpunk-styled AI web application that detects and counts single-arm dumbbell bicep curls in real-time through your webcam. It features a side-profile alignment guide box, interactive target goal prompt, dynamic angle tracking, sound effects, and backend persistence.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-lohitgym.netlify.app-00f59b?style=for-the-badge&logo=netlify&logoColor=black)](https://lohitgym.netlify.app/)
+[![MediaPipe Pose](https://img.shields.io/badge/MediaPipe-Pose%20Estimation-00f2fe?style=for-the-badge&logo=google&logoColor=black)](https://developers.google.com/mediapipe)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-9d4edd?style=for-the-badge)](LICENSE)
 
----
+<br />
 
-## 🚀 Deploy Online (Netlify Drop)
+### 🌐 **[👉 Click Here to Open Live Website: https://lohitgym.netlify.app/](https://lohitgym.netlify.app/)**
 
-Click the link below to deploy your website directly by uploading the folder:
+<br />
 
-### 🔗 **[https://app.netlify.com/drop](https://app.netlify.com/drop)**
+<p align="center">
+  <b>An AI-powered computer vision fitness coach that runs directly in your browser.</b><br />
+  Accurately counts single-arm dumbbell bicep curls via webcam with profile-view posture alignment, interactive goal tracking, real-time joint angle mathematics, audio feedback, and dual-mode cloud/local storage.
+</p>
 
-### How to deploy:
-1. Click **[https://app.netlify.com/drop](https://app.netlify.com/drop)** to open the Netlify upload page.
-2. Drag and drop the **`frontend`** folder (`c:\Users\lohit\Videos\gym\frontend`) into the upload box on that page.
-3. That's it! Your website will be live in seconds with its own URL.
-
----
-
-## ✨ Features
-
-- 🎯 **Target Goal Prompt**: On launch, asks *"How many dumbbell bicep curls are you going to do today?"* with quick selection chips (`5`, `8`, `10`, `12`, `15`, `20`) or custom stepper input.
-- 📐 **Profile Stance Guide Rectangle**:
-  - Glowing HUD box drawn over the webcam feed.
-  - Detects if you are standing in profile view (facing leftward or rightward).
-  - Automatically identifies whether you are facing **Left** or **Right** and tracks the active foreground arm.
-  - Changes from amber warning (*"Turn sideways inside box"*) to neon green (*"✔ Profile Locked"*) when your stance is aligned.
-- 📊 **Dedicated Stats Display Directly Below Webcam**:
-  - **Target Goal**: Prominently shows your selected goal (e.g. `12 REPS`).
-  - **Reps Completed**: Giant glowing neon counter with rep pulse animations (`0 / 12`).
-  - **Reps Remaining**: Live countdown (`12 LEFT`).
-  - **Elbow Flexion & Form Quality**: Live joint angle readout ($168^\circ \to 42^\circ$) and form badges (`FULL EXTENSION`, `CURLING UP`, `PEAK CONTRACTION`, `LOWERING`).
-  - **Time & Calories**: Session stopwatch and active calorie burn counter.
-- 🔊 **Audio Synthesizer Engine**: Web Audio API sound effects for ascending rep chimes, peak holds, and victory fanfares without external audio dependencies.
-- 🏆 **Celebration Fanfare**: Confetti explosion and summary modal upon reaching your set target.
-- 🎮 **Test / Demo Simulation Mode**: Test the complete curl counting, angle physics, and audio chimes even without a physical webcam connected!
-- ⚡ **Dual Sync Engine**:
-  - **Local Mode**: Node.js Express server + WebSocket live sync + JSON file database.
-  - **Netlify / Cloud Mode**: Seamless static CDN execution with automatic browser `localStorage` workout vault.
+</div>
 
 ---
 
-## 📁 Project Architecture
+## 🌟 Key Highlights
+
+- 🌐 **Instant Live Deployment**: Available online at [https://lohitgym.netlify.app/](https://lohitgym.netlify.app/).
+- ⚡ **Zero-Latency In-Browser Vision**: Powered by Google MediaPipe Pose via WebGL/WASM—no video is transmitted across the network, guaranteeing 100% privacy and smooth 60 FPS tracking.
+- 📐 **Smart Profile-View Alignment Box**: Visual cyberpunk guide rectangle detects if you are standing in profile view (facing left or right). Alerts you if you face forward to ensure peak joint angle accuracy.
+- 🎯 **Personalized Goal Setting**: Prompts you for your workout rep goal at startup (`5`, `8`, `10`, `12`, `15`, `20`, or custom) and dynamically syncs your progress below the camera.
+- 📊 **Dynamic Gym HUD Directly Below Webcam**: Displays Target Goal, Live Rep Count, Reps Remaining, Real-time Flexion Angle ($168^\circ \to 42^\circ$), Form Rating, Stopwatch Timer, and Estimated Calories Burned.
+- 🔊 **Web Audio Synthesizer**: Custom retro-futuristic sound engine for rep ticks, peak holds, and victory fanfare without requiring external audio files.
+- 🎮 **Offline Simulator / Demo Mode**: Built-in 2D kinematic mannequin simulator allows full testing even without physical camera hardware.
+- 🔄 **Dual Telemetry Architecture**: Connects seamlessly with the included Node.js + WebSocket backend locally, and automatically falls back to an offline `localStorage` vault when hosted on static platforms like Netlify.
+
+---
+
+## 📸 How It Works
+
+```
+                     ┌───────────────────────────────┐
+                     │         User Webcam           │
+                     └───────────────┬───────────────┘
+                                     │
+                                     ▼
+                     ┌───────────────────────────────┐
+                     │     MediaPipe Pose Engine     │
+                     │ (Shoulder, Elbow, Wrist, Ear) │
+                     └───────────────┬───────────────┘
+                                     │
+           ┌─────────────────────────┴─────────────────────────┐
+           ▼                                                   ▼
+┌─────────────────────────┐                         ┌─────────────────────┐
+│ Stance Orientation      │                         │ Joint Angle Compute │
+│ Left Profile / Right    │                         │ θ = ∠(Shoulder,     │
+│ Profile / Front Warning │                         │       Elbow, Wrist) │
+└──────────┬──────────────┘                         └──────────┬──────────┘
+           │                                                   │
+           └─────────────────────────┬─────────────────────────┘
+                                     │
+                                     ▼
+                     ┌───────────────────────────────┐
+                     │    Rep State Machine Flow     │
+                     │  DOWN (>150°) ──► CURLING     │
+                     │         ▲              │      │
+                     │         │              ▼      │
+                     │     +1 REP ◄── LOWERING ◄── PEAK (<50°)
+                     └───────────────┬───────────────┘
+                                     │
+           ┌─────────────────────────┴─────────────────────────┐
+           ▼                                                   ▼
+┌─────────────────────────┐                         ┌─────────────────────┐
+│ Visual HUD & Confetti   │                         │ Audio Chimes &      │
+│ Real-time stats update  │                         │ Backend/Local Sync  │
+└─────────────────────────┘                         └─────────────────────┘
+```
+
+### Biomechanical Angle Calculation
+The application tracks the 2D spatial coordinates of the active arm:
+- **Shoulder Joint ($A$)**: Landmark `11` (Left) or `12` (Right)
+- **Elbow Joint ($B$)**: Landmark `13` (Left) or `14` (Right)
+- **Wrist Joint ($C$)**: Landmark `15` (Left) or `16` (Right)
+
+The interior flexion angle $\theta$ is derived using vector trigonometry:
+
+$$\vec{u} = \vec{A} - \vec{B}, \quad \vec{v} = \vec{C} - \vec{B}$$
+
+$$\theta = \arccos\left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}\right) \times \frac{180^\circ}{\pi}$$
+
+- **Full Extension (`DOWN`)**: $\theta \ge 150^\circ$
+- **Peak Contraction (`PEAK`)**: $\theta \le 50^\circ$
+- **Rep Completion**: Full transition from `DOWN` $\to$ `CURLING` $\to$ `PEAK` $\to$ `DOWN` counts as 1 valid repetition with form validation.
+
+---
+
+## 📂 Project Structure
 
 ```
 gym/
-├── frontend/                       # Client-side web application
-│   ├── index.html                  # Main UI layout, viewport, HUD & modals
-│   ├── style.css                   # Cyberpunk dark theme, glassmorphism & neon glows
-│   ├── app.js                      # Main application & timer controller
-│   ├── pose-tracker.js             # MediaPipe pose detection, profile math & state machine
-│   ├── audio.js                    # Web Audio API synthesizer
-│   └── api-client.js               # Dual WebSocket/REST & Netlify LocalStorage sync
-├── backend/                        # Node.js server
-│   ├── server.js                   # Express REST API & WebSocket server
-│   ├── storage.js                  # Persistent workout session storage
+├── frontend/                       # Client web application (Netlify deploy target)
+│   ├── index.html                  # Cyberpunk HUD UI layout, modals & canvas viewport
+│   ├── style.css                   # Glassmorphism, neon glow aesthetics & responsive styles
+│   ├── app.js                      # Core UI coordinator, stopwatch timer & state sync
+│   ├── pose-tracker.js             # MediaPipe pose pipeline, profile classifier & state machine
+│   ├── audio.js                    # Web Audio API sound synthesizer
+│   └── api-client.js               # WebSocket, REST & Netlify localStorage sync client
+├── backend/                        # Local Node.js server
+│   ├── server.js                   # Express server & WebSocket telemetry engine
+│   ├── storage.js                  # Persistent JSON storage manager
 │   └── data/
-│       └── workouts.json           # Persisted workout sessions & lifetime stats
-├── netlify.toml                    # Netlify deployment configuration
-├── package.json                    # Project metadata & dependencies
-└── README.md                       # Documentation & Netlify link
+│       └── workouts.json           # Historical workout database & personal records
+├── index.html                      # Root deployment redirect helper
+├── netlify.toml                    # Netlify build configuration
+├── package.json                    # Project configuration and dependencies
+└── README.md                       # Repository documentation
 ```
 
 ---
 
-## 🌐 Deploying to Netlify (Step-by-Step)
+## 🚀 Quick Start (Run Locally)
 
-### Option 1: Drag & Drop Deploy (Fastest — 1 Minute)
-1. Log in to [Netlify](https://app.netlify.com).
-2. Go to the **Sites** tab and navigate to **[Netlify Drop](https://app.netlify.com/drop)**.
-3. Drag and drop the **`frontend`** folder directly into the browser upload box.
-4. Netlify will publish your site instantly and provide you with a live URL (e.g., `https://radiant-curl-12345.netlify.app`)!
-5. In your Netlify site settings (**Site configuration** > **Change site name**), you can rename it to `cybercurl-ai` or your chosen name.
+### Prerequisites
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- A modern web browser (Google Chrome, Microsoft Edge, Brave, or Safari)
+- A webcam (or use the built-in **Test / Demo Simulation** mode)
 
-### Option 2: Deploy with Git (Recommended for Continuous Deployment)
-1. Push your repository to GitHub or GitLab:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of CyberCurl AI"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-   git push -u origin main
-   ```
-2. In Netlify, click **Add new site** > **Import an existing project**.
-3. Select your repository.
-4. The included `netlify.toml` file will automatically configure:
-   - **Publish directory**: `frontend`
-5. Click **Deploy Site**.
-
-### Option 3: Deploy via Netlify CLI
+### 1. Clone the repository
 ```bash
-npx netlify-cli deploy --prod --dir=frontend
+git clone https://github.com/<your-username>/gym.git
+cd gym
 ```
 
----
+### 2. Install dependencies
+```bash
+npm install
+```
 
-## 💻 Running Locally
+### 3. Start the application
+```bash
+npm start
+```
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Start the local server**:
-   ```bash
-   npm start
-   ```
-
-3. **Open in your browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000).
+### 4. Open in browser
+Visit **[http://localhost:3000](http://localhost:3000)** in your browser.
 
 ---
 
-## 🔬 How the Curl Detection Works
+## 🎯 How to Use
 
-1. **Profile Stance Angle Geometry**:
-   - Detects the coordinates of Shoulder $(A)$, Elbow $(B)$, and Wrist $(C)$.
-   - Calculates the 2D joint angle:
-     $$\theta = \arccos\left(\frac{\vec{BA} \cdot \vec{BC}}{|\vec{BA}||\vec{BC}|}\right)$$
-2. **Rep State Machine**:
-   - **Arm Extended (Bottom)**: Angle $> 150^\circ$ (State: `DOWN`)
-   - **Curling**: Angle decreases below $140^\circ$ (State: `CURLING`)
-   - **Peak Contraction**: Angle reaches $\le 50^\circ$ (State: `PEAK`, peak flag activated)
-   - **Lowering**: Angle returns smoothly (State: `LOWERING`)
-   - **Rep Registered (+1)**: Angle extends back past $148^\circ$ with verified peak flag. Triggers audio chime and increments counter.
+1. **Set Your Target Goal**: When you launch the app, choose your rep goal (e.g., 10 or 12) in the startup modal and click **Lock In Goal & Start**.
+2. **Enable Webcam**: Click **⚡ Enable Webcam** and allow camera permissions in your browser.
+3. **Align Inside the Guide Box**: Stand sideways inside the glowing boundary box (**face leftward or rightward**).
+   - If you face forward, the box turns amber with an alert: *"Please turn sideways (face left or right)"*.
+   - Once turned sideways, the box turns neon green: *"✔ PROFILE LOCKED"*.
+4. **Perform Curls**: Curl the dumbbell upward toward your shoulder ($\le 50^\circ$) and lower all the way back down ($\ge 150^\circ$).
+5. **Track Your Stats**: Watch your live reps, progress bar, joint angle gauge, and calories update directly below the webcam in real-time.
+6. **Celebrate**: Hit your goal to trigger a victory fanfare, confetti explosion, and session performance breakdown!
+
+---
+
+## 🛠️ Built With
+
+- **Frontend**: HTML5, Vanilla JavaScript (ES6+), Modern Vanilla CSS (Glassmorphism & Cyberpunk Design System)
+- **Computer Vision**: [Google MediaPipe Pose](https://developers.google.com/mediapipe/solutions/vision/pose_landmarker)
+- **Audio**: HTML5 Web Audio API (Synthesized Oscillators)
+- **Visual FX**: [canvas-confetti](https://www.npmjs.com/package/canvas-confetti)
+- **Backend**: Node.js, [Express](https://expressjs.com/), [ws (WebSockets)](https://github.com/websockets/ws)
+- **Hosting & Deployment**: [Netlify](https://www.netlify.com/)
 
 ---
 
 ## 📄 License
-This project is open-source under the [MIT License](LICENSE).
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <b>Built with ❤️ by Lohit • Powered by CyberCurl AI</b><br />
+  <sub>Star ⭐ this repository if you found it useful!</sub>
+</div>
