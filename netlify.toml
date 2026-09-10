@@ -3,9 +3,3 @@
 [build]
   # Directory to deploy (contains index.html, style.css, etc.)
   publish = "frontend"
-
-[[redirects]]
-  # Single Page Application redirect
-  from = "/*"
-  to = "/index.html"
-  status = 200
